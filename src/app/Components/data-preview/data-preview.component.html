@@ -1,0 +1,12 @@
+<div>
+    <div>
+        <span class="m-3 d-flex "><span>{{date}}</span> <span class="ms-3">{{day}}</span> <span class="ms-3">{{time}}</span></span>
+        <app-seacrh-bar (setValue)="getSearchResult($event)"></app-seacrh-bar>
+    </div>
+    <div>
+        <app-global-data [global] = "globalData"></app-global-data>
+    </div>
+    <div>
+        <app-country-data [countryData] = "filterCountryData" ></app-country-data>
+    </div>
+</div>
