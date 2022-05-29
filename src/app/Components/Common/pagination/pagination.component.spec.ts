@@ -22,4 +22,25 @@ describe('PaginationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should call getPageNo',()=>{
+    let event={
+      target:{
+        innerText:"2"
+      }
+    }
+    spyOn(component.getPage,'emit');
+    component.getPageNo(event);
+    expect(component.getPage.emit).toHaveBeenCalled()
+  });
+  it('should call getPrevious',()=>{
+    component.presentPageNumber = 3;
+    component.getPrevious();
+    expect(component.presentPageNumber).toBe(2);
+  });
+  it('should call getPrevious',()=>{
+    component.pageList=[1,2,3,4,5];
+    component.presentPageNumber = 3;
+    component.getNext();
+    expect(component.presentPageNumber).toBe(4);
+  });
 });

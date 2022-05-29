@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { SeacrhBarComponent } from './seacrh-bar.component';
 
@@ -22,4 +22,24 @@ describe('SeacrhBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should call updateSearch',()=>{
+    let event={
+      target:{
+        value:"In"
+      }
+    };
+    component.updateSearch(event);
+    expect(component['_searchSubject'].subscribe(data =>{
+      expect(data).toBe('In')
+    }))
+  });
+  it('should be _setSearchSubscription',fakeAsync(()=>{
+    spyOn(component.setValue,'emit');
+    component['_searchSubject'].next('In')
+    component['_setSearchSubscription']();
+    tick(1000);
+    component['_searchSubject'].subscribe((data)=>{
+      expect(component.setValue.emit).toHaveBeenCalledWith(data);
+    })
+  }))
 });
