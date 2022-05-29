@@ -30,13 +30,12 @@ export class DataPreviewComponent implements OnInit {
       let today = new Date()
       this.date = String(timeData.getDate()) +'/'+ String(timeData.getUTCMonth()) +'/'+ String(timeData.getFullYear());
       this.time = String(today.getHours()) +':'+String(today.getMinutes())+':'+String(today.getSeconds());
-      this.day = timeData.toLocaleString('en-us', {  weekday: 'long' })
-      console.log(this.callTimeStamp, this.date,this.time,this.day)
+      this.day = timeData.toLocaleString('en-us', {  weekday: 'long' });
     });
   }
   getSearchResult(event:string){
     this.filterCountryData = this.countryData.filter( ( country : CountryData) =>{
-      return country.Slug?.includes(event.toLowerCase())
+      return country.Slug.includes(event.toLowerCase())
     })
   }
 }
