@@ -1,0 +1,99 @@
+<div>
+  <h2 class="display-6  mb-3">Countries</h2>
+  <table class="table dataTable">
+    <thead>
+      <tr>
+        <th scope="col" class="colProp" (click)="sortCol('Country')"><span >Country</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.Country">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" *ngIf="!iconShow.Country"/>
+          </svg>
+        </th>
+        <th scope="col" class="colProp" (click)="sortCol('New Confirmed')"><span >New Confirmed</span> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.NewConfirmed">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewConfirmed">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+        <th scope="col" class="colProp" (click)="sortCol('Total Confirmed')"><span >Total Confirmed</span> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalConfirmed">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalConfirmed">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+        <th scope="col" class="colProp" (click)="sortCol('New Death')"><span >New Deaths</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.NewDeaths">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewDeaths">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+        <th scope="col" class="colProp" (click)="sortCol('Total Death')"><span >Total Deaths</span><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalDeaths">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalDeaths">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+        <th scope="col" class="colProp" (click)="sortCol('New Recovered')"><span >New Recovered</span><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.NewRecovered">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewRecovered">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+        <th scope="col" class="colProp" (click)="sortCol('Total Recovered')"><span >Total Recovered</span><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalRecovered">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalRecovered">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of tenData">
+        <th class="colProp" scope="row">{{i.Country}}</th>
+        <td  class="colProp">{{i.NewConfirmed}}</td>
+        <td  class="colProp">{{i.TotalConfirmed}}</td>
+        <td  class="colProp">{{i.NewDeaths}}</td>
+        <td  class="colProp">{{i.TotalDeaths}}</td>
+        <td  class="colProp">{{i.NewRecovered}} </td>
+        <td  class="colProp">{{i.TotalRecovered}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="countryData.length > 10">
+  <app-pagination [pageList]="pagesArray" (getPage)="getPageData($event)"></app-pagination>
+</div>
