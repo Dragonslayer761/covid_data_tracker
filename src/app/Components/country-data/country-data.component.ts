@@ -31,7 +31,6 @@ export class CountryDataComponent implements OnInit,OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    //console.log(this.countryData)
     this.totalPage =Math.ceil(this.countryData.length / this.limit);
     this.startIndex = (this.pageNumber - 1) * this.limit
     this.endIndex = this.startIndex + this.limit;
