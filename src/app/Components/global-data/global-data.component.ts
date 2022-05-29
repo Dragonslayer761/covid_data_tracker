@@ -6,12 +6,8 @@ import { GlobalData } from 'src/app/Models/covid.models';
   templateUrl: './global-data.component.html',
   styleUrls: ['./global-data.component.scss']
 })
-export class GlobalDataComponent implements OnInit {
+export class GlobalDataComponent {
   @Input() global:GlobalData;
   constructor() { }
-
-  ngOnInit(): void {
-    
-  }
 
 }

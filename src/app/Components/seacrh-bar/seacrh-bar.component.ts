@@ -6,15 +6,13 @@ import { debounceTime, Subject } from 'rxjs';
   templateUrl: './seacrh-bar.component.html',
   styleUrls: ['./seacrh-bar.component.scss']
 })
-export class SeacrhBarComponent implements OnInit {
+export class SeacrhBarComponent {
   @Output() setValue: EventEmitter<string> = new EventEmitter();
   private _searchSubject: Subject<string> = new Subject();
   constructor() {
     this._setSearchSubscription();
   }
 
-  ngOnInit(): void {
-  }
   private _setSearchSubscription() {
     this._searchSubject.pipe(
       debounceTime(500)

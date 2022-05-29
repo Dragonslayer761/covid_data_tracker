@@ -5,16 +5,12 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
   @Input() pageList: number[];
   @Output() getPage = new EventEmitter();
   presentPageNumber: any = 1;
   pageListRender: any;
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
   getPageNo(event: any) {
     let val = "";
     val = event.target.innerText
