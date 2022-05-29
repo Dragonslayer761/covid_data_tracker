@@ -1,0 +1,12 @@
+
+<div class="mb-4">
+    <div>
+        <h2 class="display-4 px-3 mb-3">Global Data</h2>
+    </div>
+    <div class="d-flex">
+        <app-card [title]="'Confirmed'" [total]="global.TotalConfirmed" [new]="global.NewConfirmed" ></app-card>
+        <app-card [title]="'Deaths'" [total]="global.TotalDeaths" [new]="global.NewDeaths" ></app-card>
+        <app-card [title]="'Recovered'" [total]="global.TotalRecovered" [new]="global.NewRecovered" ></app-card>
+    </div>
+    
+</div>
