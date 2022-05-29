@@ -1,4 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
@@ -56,7 +57,7 @@ describe('DataPreviewComponent', () => {
       declarations: [ DataPreviewComponent ],
       imports:[FormsModule,HttpClientTestingModule],
       providers:[{ provide: CovidDataTrackerService, useValue: mockCovidService }],
-      schemas:[]
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
