@@ -8,7 +8,6 @@ import { DataPreviewComponent } from './Components/data-preview/data-preview.com
 import { GlobalDataComponent } from './Components/global-data/global-data.component';
 import { CountryDataComponent } from './Components/country-data/country-data.component';
 import { CardComponent } from './Components/Common/card/card.component';
-import { ListComponentComponent } from './Components/Common/list-component/list-component.component';
 import { PaginationComponent } from './Components/Common/pagination/pagination.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { PaginationComponent } from './Components/Common/pagination/pagination.c
     GlobalDataComponent,
     CountryDataComponent,
     CardComponent,
-    ListComponentComponent,
     PaginationComponent
   ],
   imports: [
