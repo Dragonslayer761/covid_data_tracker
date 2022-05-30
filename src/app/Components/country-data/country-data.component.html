@@ -1,6 +1,6 @@
 <div>
   <h2 class="display-6  mb-3">Countries</h2>
-  <table class="table dataTable">
+  <table class="table dataTable" *ngIf="countryData.length > 0">
     <thead>
       <tr>
         <th scope="col" class="colProp" (click)="sortCol('Country')"><span >Country</span>
@@ -93,6 +93,13 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="countryData.length<= 0">
+    <div class="card card-background" style="width: 33rem;">
+      <div class="card-body">
+        <h5 class="card-title display-3">No Data Found !!</h5>
+      </div>
+    </div>
+  </div>
 </div>
 <div *ngIf="countryData.length > 10">
   <app-pagination [pageList]="pagesArray" (getPage)="getPageData($event)"></app-pagination>

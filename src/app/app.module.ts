@@ -9,6 +9,7 @@ import { GlobalDataComponent } from './Components/global-data/global-data.compon
 import { CountryDataComponent } from './Components/country-data/country-data.component';
 import { CardComponent } from './Components/Common/card/card.component';
 import { PaginationComponent } from './Components/Common/pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PaginationComponent } from './Components/Common/pagination/pagination.c
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

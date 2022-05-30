@@ -9,6 +9,8 @@ import { debounceTime, Subject } from 'rxjs';
 export class SeacrhBarComponent {
   @Output() setValue: EventEmitter<string> = new EventEmitter();
   private _searchSubject: Subject<string> = new Subject();
+  searchText:any;
+
   constructor() {
     this._setSearchSubscription();
   }
@@ -20,8 +22,12 @@ export class SeacrhBarComponent {
       this.setValue.emit(searchValue);
     });
   }
+  clearText(){
+    this.searchText=""
+    this._searchSubject.next(this.searchText);
+  }
   public updateSearch(event:any) {
-    let searchTextValue = event.target.value;
+    let searchTextValue = event;
     this._searchSubject.next(searchTextValue);
   }
 }
