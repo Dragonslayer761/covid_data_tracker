@@ -68,6 +68,9 @@ describe('DataPreviewComponent', () => {
     covidService = TestBed.inject(CovidDataTrackerService) as jasmine.SpyObj<CovidDataTrackerService>;
     fixture.detectChanges();
   });
+  afterEach(() => {
+    fixture.destroy();
+  });
 
   it('should create', () => {
     fixture.detectChanges()
