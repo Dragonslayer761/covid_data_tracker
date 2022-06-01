@@ -5,77 +5,77 @@
       <tr>
         <th scope="col" class="colProp" (click)="sortCol('Country')"><span >Country</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.Country">
+            viewBox="0 0 16 16" *ngIf="iconShow.Country && sortColname== 'Country'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16">
             <path
-              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" *ngIf="!iconShow.Country"/>
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" *ngIf="!iconShow.Country && sortColname== 'Country'"/>
           </svg>
         </th>
         <th scope="col" class="colProp" (click)="sortCol('New Confirmed')"><span >New Confirmed</span> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.NewConfirmed">
+            viewBox="0 0 16 16" *ngIf="iconShow.NewConfirmed && sortColname== 'New Confirmed' ">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewConfirmed">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewConfirmed && sortColname== 'New Confirmed'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>
         <th scope="col" class="colProp" (click)="sortCol('Total Confirmed')"><span >Total Confirmed</span> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.TotalConfirmed">
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalConfirmed && sortColname== 'Total Confirmed'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalConfirmed">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalConfirmed && sortColname== 'Total Confirmed'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>
         <th scope="col" class="colProp" (click)="sortCol('New Death')"><span >New Deaths</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.NewDeaths">
+            viewBox="0 0 16 16" *ngIf="iconShow.NewDeaths && sortColname== 'New Death'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewDeaths">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewDeaths  && sortColname== 'New Death'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>
         <th scope="col" class="colProp" (click)="sortCol('Total Death')"><span >Total Deaths</span><svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.TotalDeaths">
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalDeaths && sortColname== 'Total Death'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalDeaths">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalDeaths && sortColname== 'Total Death'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>
         <th scope="col" class="colProp" (click)="sortCol('New Recovered')"><span >New Recovered</span><svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.NewRecovered">
+            viewBox="0 0 16 16" *ngIf="iconShow.NewRecovered && sortColname== 'New Recovered'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewRecovered">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.NewRecovered && sortColname== 'New Recovered'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>
         <th scope="col" class="colProp" (click)="sortCol('Total Recovered')"><span >Total Recovered</span><svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill hideMe"
-            viewBox="0 0 16 16" *ngIf="iconShow.TotalRecovered">
+            viewBox="0 0 16 16" *ngIf="iconShow.TotalRecovered && sortColname== 'Total Recovered'">
             <path
               d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
           </svg> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalRecovered">
+            class="bi bi-caret-down-fill hideMe" viewBox="0 0 16 16" *ngIf="!iconShow.TotalRecovered && sortColname== 'Total Recovered'">
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
           </svg> </th>

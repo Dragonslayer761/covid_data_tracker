@@ -18,6 +18,7 @@ export class CountryDataComponent implements OnInit,OnChanges {
   pageNumber:number=1;
   pagesArray: number[];
   sortType:string  = sortOrder.asc;
+  sortColname:any;
   iconShow:any={
     Country : true,
     NewConfirmed : true,
@@ -51,6 +52,7 @@ export class CountryDataComponent implements OnInit,OnChanges {
     this.tenData = this.countryData.slice(this.startIndex,this.endIndex)
   }
   sortCol(colName:any){
+    this.sortColname=colName;
     if(this.sortType == sortOrder.asc){
       this.sortType = sortOrder.desc
       //sort descending
