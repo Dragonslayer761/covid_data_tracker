@@ -51,12 +51,229 @@ describe('CountryDataComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should call ngOninit : if country data greater than limit',()=>{
+    component.limit=4;
+    component.countryData=[
+      {
+        "ID": "54934645-57da-4778-b46a-4c2352753582",
+        "Country": "Afghanistan",
+        "CountryCode": "AF",
+        "Slug": "afghanistan",
+        "NewConfirmed": 10,
+        "TotalConfirmed": 180122,
+        "NewDeaths": 20,
+        "TotalDeaths": 7701,
+        "NewRecovered": 2,
+        "TotalRecovered": 300,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "4a1550be-59c6-4590-aff4-173f5791ad83",
+        "Country": "Albania",
+        "CountryCode": "AL",
+        "Slug": "albania",
+        "NewConfirmed": 21,
+        "TotalConfirmed": 276081,
+        "NewDeaths": 10,
+        "TotalDeaths": 3497,
+        "NewRecovered": 1,
+        "TotalRecovered": 4,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "043a298b-2b34-4b1c-a8cc-e7b3797874d2",
+        "Country": "Algeria",
+        "CountryCode": "DZ",
+        "Slug": "algeria",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 265884,
+        "NewDeaths": 0,
+        "TotalDeaths": 6875,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "4342741b-9229-4c84-8230-747d1d730f68",
+        "Country": "Andorra",
+        "CountryCode": "AD",
+        "Slug": "andorra",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 42894,
+        "NewDeaths": 0,
+        "TotalDeaths": 153,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "1f95d21c-84c9-4f7c-aad3-4bb31e978a43",
+        "Country": "Angola",
+        "CountryCode": "AO",
+        "Slug": "angola",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 99761,
+        "NewDeaths": 0,
+        "TotalDeaths": 1900,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      }
+    ];
+    fixture.detectChanges();
+    component.ngOnInit();
+    expect(component.tenData.length).toBe(4);
+  })
   it('should test ngOnChanges',()=>{
     component.ngOnChanges();
-
     expect(component.totalPage).toBe(1)
   });
-  it('should call getPageData',()=>{
+  it('should test ngOnChanges:if country data greater than limit ',()=>{
+    component.countryData=[
+      {
+        "ID": "54934645-57da-4778-b46a-4c2352753582",
+        "Country": "Afghanistan",
+        "CountryCode": "AF",
+        "Slug": "afghanistan",
+        "NewConfirmed": 10,
+        "TotalConfirmed": 180122,
+        "NewDeaths": 20,
+        "TotalDeaths": 7701,
+        "NewRecovered": 2,
+        "TotalRecovered": 300,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "4a1550be-59c6-4590-aff4-173f5791ad83",
+        "Country": "Albania",
+        "CountryCode": "AL",
+        "Slug": "albania",
+        "NewConfirmed": 21,
+        "TotalConfirmed": 276081,
+        "NewDeaths": 10,
+        "TotalDeaths": 3497,
+        "NewRecovered": 1,
+        "TotalRecovered": 4,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "043a298b-2b34-4b1c-a8cc-e7b3797874d2",
+        "Country": "Algeria",
+        "CountryCode": "DZ",
+        "Slug": "algeria",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 265884,
+        "NewDeaths": 0,
+        "TotalDeaths": 6875,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "4342741b-9229-4c84-8230-747d1d730f68",
+        "Country": "Andorra",
+        "CountryCode": "AD",
+        "Slug": "andorra",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 42894,
+        "NewDeaths": 0,
+        "TotalDeaths": 153,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "1f95d21c-84c9-4f7c-aad3-4bb31e978a43",
+        "Country": "Angola",
+        "CountryCode": "AO",
+        "Slug": "angola",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 99761,
+        "NewDeaths": 0,
+        "TotalDeaths": 1900,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      }
+    ];
+    component.limit=4;
+    component.ngOnChanges();
+    expect(component.tenData.length).toBe(4);
+  });
+  it('should call getPageData:if country data greater than limit',()=>{
+    let event = 1;
+    component.countryData=[
+      {
+        "ID": "54934645-57da-4778-b46a-4c2352753582",
+        "Country": "Afghanistan",
+        "CountryCode": "AF",
+        "Slug": "afghanistan",
+        "NewConfirmed": 10,
+        "TotalConfirmed": 180122,
+        "NewDeaths": 20,
+        "TotalDeaths": 7701,
+        "NewRecovered": 2,
+        "TotalRecovered": 300,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "4a1550be-59c6-4590-aff4-173f5791ad83",
+        "Country": "Albania",
+        "CountryCode": "AL",
+        "Slug": "albania",
+        "NewConfirmed": 21,
+        "TotalConfirmed": 276081,
+        "NewDeaths": 10,
+        "TotalDeaths": 3497,
+        "NewRecovered": 1,
+        "TotalRecovered": 4,
+        "Date": "2022-05-29T15:07:32.213Z"
+      },
+      {
+        "ID": "043a298b-2b34-4b1c-a8cc-e7b3797874d2",
+        "Country": "Algeria",
+        "CountryCode": "DZ",
+        "Slug": "algeria",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 265884,
+        "NewDeaths": 0,
+        "TotalDeaths": 6875,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "4342741b-9229-4c84-8230-747d1d730f68",
+        "Country": "Andorra",
+        "CountryCode": "AD",
+        "Slug": "andorra",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 42894,
+        "NewDeaths": 0,
+        "TotalDeaths": 153,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      },
+      {
+        "ID": "1f95d21c-84c9-4f7c-aad3-4bb31e978a43",
+        "Country": "Angola",
+        "CountryCode": "AO",
+        "Slug": "angola",
+        "NewConfirmed": 0,
+        "TotalConfirmed": 99761,
+        "NewDeaths": 0,
+        "TotalDeaths": 1900,
+        "NewRecovered": 0,
+        "TotalRecovered": 0,
+        "Date": "2022-06-01T18:10:07.318Z",
+      }
+    ];
+    component.limit=4;
+    component.getPageData(event);
+    expect(component.tenData.length).toBe(4)
+  });
+  it('should call getPageData:',()=>{
     let event = 1;
     component.getPageData(event);
     expect(component.startIndex).toBe(0)

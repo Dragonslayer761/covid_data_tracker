@@ -1,5 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ColumnName, sortOrder } from 'src/app/enums/covid.enum';
 import { CountryData } from 'src/app/Models/covid.models';
 
