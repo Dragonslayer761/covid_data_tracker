@@ -83,20 +83,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let i of tenData">
-        <th class="colProp" scope="row">{{i.Country}}</th>
-        <td  class="colProp">{{i.NewConfirmed}}</td>
-        <td  class="colProp">{{i.TotalConfirmed}}</td>
-        <td  class="colProp">{{i.NewDeaths}}</td>
-        <td  class="colProp">{{i.TotalDeaths}}</td>
-        <td  class="colProp">{{i.NewRecovered}} </td>
-        <td  class="colProp">{{i.TotalRecovered}} </td>
+        <td   scope="row">{{i.Country}}</td>
+        <td  >{{i.NewConfirmed}}</td>
+        <td  >{{i.TotalConfirmed}}</td>
+        <td  >{{i.NewDeaths}}</td>
+        <td  >{{i.TotalDeaths}}</td>
+        <td  >{{i.NewRecovered}} </td>
+        <td  >{{i.TotalRecovered}} </td>
       </tr>
     </tbody>
   </table>
   <div *ngIf="countryData.length<= 0">
     <div class="card card-background" style="width: 33rem;">
       <div class="card-body">
-        <h5 class="card-title display-3">No Data Found !!</h5>
+        <h5 class="card-title display-4 red-color"><b>No Data Found !!</b></h5>
       </div>
     </div>
   </div>
