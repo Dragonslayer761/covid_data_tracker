@@ -1,21 +1,26 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { debounceTime, Subject, Subscription } from 'rxjs';
+import { CovidDataTrackerService } from 'src/app/services/covid-data-tracker.service';
 
 @Component({
   selector: 'app-seacrh-bar',
   templateUrl: './seacrh-bar.component.html',
   styleUrls: ['./seacrh-bar.component.scss']
 })
-export class SeacrhBarComponent implements OnDestroy {
+export class SeacrhBarComponent implements OnInit ,OnDestroy {
   @Output() setValue: EventEmitter<string> = new EventEmitter();
   private _searchSubject: Subject<string> = new Subject();
-  searchText:any;
+  searchText:any ="";
   searchTextObservable:Subscription;
 
-  constructor() {
+  constructor(private covidService:CovidDataTrackerService) {
     this._setSearchSubscription();
   }
-
+  ngOnInit(): void {
+    this.covidService.$countryDataEmit.subscribe(()=>{
+      this.searchText=""
+    })
+  }
   private _setSearchSubscription() {
     this.searchTextObservable = this._searchSubject.pipe(
       debounceTime(500)

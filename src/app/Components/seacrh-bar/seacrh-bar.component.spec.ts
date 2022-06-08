@@ -1,17 +1,23 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { of } from 'rxjs';
+import { CovidDataTrackerService } from 'src/app/services/covid-data-tracker.service';
 
 import { SeacrhBarComponent } from './seacrh-bar.component';
 
 describe('SeacrhBarComponent', () => {
   let component: SeacrhBarComponent;
   let fixture: ComponentFixture<SeacrhBarComponent>;
-
+  let covidService:CovidDataTrackerService;
+  const mockCovidService = {
+    $countryDataEmit: of([])
+  }
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SeacrhBarComponent ],
       imports:[FormsModule],
+      providers:[{ provide: CovidDataTrackerService, useValue: mockCovidService }],
       schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
@@ -20,6 +26,7 @@ describe('SeacrhBarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SeacrhBarComponent);
     component = fixture.componentInstance;
+    covidService = TestBed.inject(CovidDataTrackerService) as jasmine.SpyObj<CovidDataTrackerService>;
     fixture.detectChanges();
   });
   afterEach(() => {
@@ -27,6 +34,7 @@ describe('SeacrhBarComponent', () => {
   });
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.searchText).toBe("");
   });
   it('should call clearText',()=>{
     component.searchText="";

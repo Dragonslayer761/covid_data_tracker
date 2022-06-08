@@ -23,10 +23,10 @@ export class CountryData {
 }
 
 export class CovidData {
-    ID! : string ;
-    Message! : string;
-    Global! : GlobalData ;
-    Countries!: CountryData[];
-    Date! : string ;
+    ID : string ;
+    Message : string;
+    Global : GlobalData ;
+    Countries: CountryData[];
+    Date : string ;
 }
 
