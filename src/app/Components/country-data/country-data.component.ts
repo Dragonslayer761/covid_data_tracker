@@ -41,6 +41,7 @@ export class CountryDataComponent implements OnInit, OnChanges {
     this.pagesArray = new Array(this.totalPage).fill(1);
   }
   ngOnChanges(): void {
+    this.pageNumber=1
     this.totalPage = Math.ceil(this.countryData.length / this.limit);
     this.startIndex = (this.pageNumber - 1) * this.limit
     this.endIndex = this.startIndex + this.limit;
